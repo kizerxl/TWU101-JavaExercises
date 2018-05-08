@@ -13,7 +13,29 @@ public class DiamondExercises {
 //             ***
 //            *****
     private static void drawAnIsoscelesTriangle(int n) {
+        int lineCount = n;
+        int starCount = 1;
+        int spaceCount = n - 1;
 
+        for(int i = 0; i < lineCount; i++) {
+            printSpaces(spaceCount);
+            printStars(starCount);
+            starCount += 2;
+            spaceCount -= 1;
+            System.out.println();
+        }
+    }
+
+    private static void printSpaces(int numberOfSpaces) {
+        for(int i = 0; i < numberOfSpaces; i++) {
+            System.out.print(" ");
+        }
+    }
+
+    private static void printStars(int numberOfStars) {
+        for(int i = 0; i < numberOfStars; i++) {
+            System.out.print("*");
+        }
     }
 
 //    Diamond
@@ -24,7 +46,30 @@ public class DiamondExercises {
 //             ***
 //              *
     private static void drawADiamond(int n) {
+        int lineCount = n;
+        int starCount = 1;
+        int spaceCount = n - 1;
 
+        //top part
+        for(int i = 0; i < lineCount; i++) {
+            printSpaces(spaceCount);
+            printStars(starCount);
+            starCount += 2;
+            spaceCount -= 1;
+            System.out.println();
+        }
+
+        starCount -= 2;
+        spaceCount += 1;
+
+        //bottom part
+        for(int i = 0; i < lineCount; i++) {
+            starCount -= 2;
+            spaceCount += 1;
+            printSpaces(spaceCount);
+            printStars(starCount);
+            System.out.println();
+        }
     }
 
 //    Diamond with Name
@@ -36,6 +81,28 @@ public class DiamondExercises {
 //            ***
 //             *
     private static void drawADiamondWithYourName(int n) {
+        int lineCount = n;
+        int starCount = 1;
+        int spaceCount = n - 1;
 
+        //top part
+        for(int i = 0; i < lineCount - 1; i++) {
+            printSpaces(spaceCount);
+            printStars(starCount);
+            starCount += 2;
+            spaceCount -= 1;
+            System.out.println();
+        }
+
+        System.out.println("Felix");
+
+        //bottom part
+        for(int i = 0; i < lineCount; i++) {
+            starCount -= 2;
+            spaceCount += 1;
+            printSpaces(spaceCount);
+            printStars(starCount);
+            System.out.println();
+        }
     }
 }
